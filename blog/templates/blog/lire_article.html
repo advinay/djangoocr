@@ -18,21 +18,50 @@
 	<h3 class="titre-comments">Commentaires</h3>
 
 	<h4>Poster votre propre commentaire</h4>
-	<form method="post" action="" class="pure-form">
 
-		<!-- A vous de remplir le formulaire également -->
+  <form method="post" action="" class="pure-form">
+    {% csrf_token %}
 
-		<p style="text-align:center">
-			<input class="pure-button pure-button-primary" type="submit" />
-		</p>
-	</form>
+    <!-- A vous de remplir le formulaire également -->
 
-	<div class="clear"></div>
+    <p><label for="pseudo">Pseudo: </label>
+    <input id="pseudo" type="text" name="pseudo" value="">
+    </p>
 
-	
-	<div class="commentaire">
-		<p>Maxime, le 28 mai 2019</p>
-		<p>Ceci est un exemple de commentaire, qui est à remplacer par votre modèle</p>
-	</div>
+    <p><label for="email">Email: </label>
+    <input id="email" type="text" name="commentateur_email" value="">
+    </p>
+
+
+
+    <p><label for="contenu_commentaire">Contenu: </label>
+    <textarea id="contenu_commentaire" rows=10 name="contenu_commentaire" value=""></textarea>
+    </p>
+
+    <p style="text-align:center">
+      <input class="pure-button pure-button-primary" type="submit" />
+    </p>
+  </form>
+
+
+  <div class="clear"></div>
+
+  <div class="clear"></div>
+
+    {%for comment in lastcomments%}
+
+
+    <p class="infos-article">{{comment.pseudo}}, le {{ comment.date|date:'SHORT_DATETIME_FORMAT' }}</p>
+
+      <div class="contenu-article">
+      {{ comment.contenu|safe }}
+      </div>
+
+    {%endfor%}
+
+
+
+
+
 
 {% endblock %}

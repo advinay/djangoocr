@@ -36,6 +36,8 @@ class Comment(models.Model):
     is_visible = models.BooleanField(verbose_name="Commentaire visible ?",
                                      default=True)
     contenu = models.TextField(null=True)
+    date = models.DateTimeField(verbose_name="Date de commentaire",
+                                auto_now_add=False, auto_now=True)
 
     def __str__(self):
 

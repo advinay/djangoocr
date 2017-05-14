@@ -1,7 +1,9 @@
 from django.shortcuts import render, get_object_or_404
 
-from .models import Article, Categorie
+from .models import Article, Categorie, Comment
+from .forms import CommentateurForm
 
+from django.template import RequestContext
 
 def accueil(request):
     """
@@ -11,7 +13,6 @@ def accueil(request):
     le moment.
     """
     articles = Article.objects.filter(is_visible=True).order_by('-date')[:4]
-    comments = Comment.objects.filter(is_visible=True)
 
     return render(request, 'blog/accueil.html', {'articles': articles})
 
@@ -23,6 +24,27 @@ def lire_article(request, slug):
     """
     article = get_object_or_404(Article, slug=slug)
 
-    return render(request, 'blog/lire_article.html', {'article': article})
+    lastcomments=Comment.objects.filter(article=article)[:3]
+
+    #lastcomment=queryset[0]
+
+    if request.method == 'POST':
+        # create a form instance and populate it with data from the request:
+        form = CommentateurForm(request.POST)
+        # check whether it's valid:
+        #if form.is_valid():
+        #     # process the data in form.cleaned_data as required
+        #     # ...
+        #     # redirect to a new URL:
+        #     return HttpResponseRedirect(slug)
+
+    # if a GET (or any other method) we'll create a blank form
+    else:
+        form = CommentateurForm()
+
+    return render(request, 'blog/lire_article.html',{'article': article,'lastcomments':lastcomments,'form':form})
+
+
+
 
 
