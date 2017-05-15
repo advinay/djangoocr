@@ -14,6 +14,10 @@ class Article(models.Model):
     def __str__(self):
         return self.titre
 
+    def nb_comment(self):
+        a=self.comment_set.count()
+        return a
+
     # En cas de besoin, vous êtes autorisé à rajouter des méthodes ou
     # propriétés dans ce modèle.
 

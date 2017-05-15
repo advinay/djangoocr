@@ -48,13 +48,15 @@
 
   <div class="clear"></div>
 
+  <h4>Commentaires précédents</h4>
+
     {%for comment in lastcomments%}
 
 
     <p class="infos-article">{{comment.pseudo}}, le {{ comment.date|date:'SHORT_DATETIME_FORMAT' }}</p>
 
       <div class="contenu-article">
-      {{ comment.contenu|safe }}
+      {{ comment.contenu }}
       </div>
 
     {%endfor%}
