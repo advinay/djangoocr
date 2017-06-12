@@ -71,5 +71,8 @@ class LireArticle(DetailView):
     model = Article
     template_name = "blog/lire_article.html"
 
-    
+def test(request):
+
+    taux_change = 3.1415
+    return render(request,'blog/test.html', {'taux': taux_change})
 

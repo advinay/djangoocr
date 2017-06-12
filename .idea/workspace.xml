@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="502acea3-f902-4fbb-862e-8d9724589a7e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/blog/urls.py" afterPath="$PROJECT_DIR$/blog/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/blog/views.py" afterPath="$PROJECT_DIR$/blog/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/blog/templates/blog/lire_article.html" afterPath="$PROJECT_DIR$/blog/templates/blog/lire_article.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/blog/templatetags/blog_extras.py" afterPath="$PROJECT_DIR$/blog/templatetags/blog_extras.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/crepes/settings.py" afterPath="$PROJECT_DIR$/crepes/settings.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -26,6 +26,7 @@
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
+                <marker date="1496244492000" expanded="true" signature="155:428" ph="..." />
               </folding>
             </state>
           </provider>
@@ -44,8 +45,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="749" />
-    <option name="y" value="569" />
+    <option name="x" value="529" />
+    <option name="y" value="294" />
     <option name="width" value="1100" />
     <option name="height" value="707" />
   </component>
@@ -227,7 +228,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="749" y="569" width="1100" height="707" extended-state="0" />
+    <frame x="529" y="294" width="1100" height="707" extended-state="0" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22181818" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -289,6 +290,7 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
+            <marker date="1496244492000" expanded="true" signature="155:428" ph="..." />
           </folding>
         </state>
       </provider>

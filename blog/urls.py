@@ -10,4 +10,5 @@ urlpatterns = [
     # url(r'^(?P<slug>.+)$', lire_article, name="blog_lire"),
     url(r'^categorie/(\d+)$', ListeArticles.as_view(), name='blog_categorie'),
     url(r'^article/(?P<pk>\d+)$', LireArticle.as_view(), name='blog_lire'),
+    url(r'^test/',test,name="test"),
 ]

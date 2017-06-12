@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'blog',
+    'stats',
 ]
 
 MIDDLEWARE_CLASSES = (
@@ -48,6 +49,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+#     'stats.middleware.stats_middleware',
 )
 
 ROOT_URLCONF = 'crepes.urls'
@@ -100,6 +102,9 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'crepes.context_processors.get_infos',
+                'crepes.context_processors.inject_constantes',
+                'crepes.context_processors.inject_taux_change',
                        ],
         },
     },

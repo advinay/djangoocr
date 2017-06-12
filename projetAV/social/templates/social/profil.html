@@ -1,0 +1,29 @@
+{% extends "social/base.html" %}
+
+{% block title %}Profil de {{user.pseudo}}{% endblock %}
+
+{% block content %}
+
+
+	<h1>Profil de {{user.pseudo}}</h1>
+
+
+	{% for statut in derniers_statuts %}
+		<h2 class="titre-article">{{ statut.titre }}</h2>
+
+
+		<p class="infos-article">Le {{ statut.date|date:'SHORT_DATETIME_FORMAT' }}, <strong>{{user.pseudo}}</strong>:</p>
+
+		<div class="contenu-article">
+			{{ statut.contenu|safe|truncatewords_html:30 }}
+		</div>
+
+
+		<hr />
+	{% endfor %}
+
+
+
+
+
+{% endblock %}

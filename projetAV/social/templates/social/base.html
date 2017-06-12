@@ -1,0 +1,27 @@
+{% load static %}
+<!doctype html>
+<html lang="fr">
+<head>
+    <title>{% block title %}OpenFaceRooms{% endblock %} - OpenFaceRooms</title>
+    
+    <link rel="stylesheet" href="{% static 'social/styles.css' %}" />
+</head>
+
+<body>
+    <header>
+    	<aside>
+        	<a href="{% url 'admin:index' %}">Admin</a>
+        </aside>
+
+        <h1>OpenFaceRooms</h1>
+    </header>
+
+    <div class="container">
+    	{% block content %}{% endblock %}
+    </div>
+            
+    <footer>
+        Mon super blog - Powered by Django
+    </footer>
+</body>
+</html>

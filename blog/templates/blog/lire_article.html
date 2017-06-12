@@ -3,6 +3,11 @@
 {% block title %}{{ article.titre }}{% endblock %}
 
 {% block content %}
+{%load blog_extras%}
+
+Nous sommes le {{date_actuelle}}
+<br>
+{% random 0 42 %}
 
 	<p>
 		<a href="{% url 'accueil' %}">Retour à la liste des articles</a>
