@@ -14,6 +14,14 @@ class UserAdmin(admin.ModelAdmin):
 class StatutAdmin(admin.ModelAdmin):
 	list_display = ('auteur','contenu','date')
 
+class MessageAdmin(admin.ModelAdmin):
+	list_display = ('auteur','contenu','date','destinataire')
+
+class CommentAdmin(admin.ModelAdmin):
+	list_display=('auteur_comment','statut_comment','text_comment','date')
+
 
 admin.site.register(User, UserAdmin)
 admin.site.register(Statut, StatutAdmin)
+admin.site.register(Message,MessageAdmin)
+admin.site.register(Comment,CommentAdmin)

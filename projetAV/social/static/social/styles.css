@@ -65,7 +65,7 @@ form input, form select, form textarea {
 }
 
 form textarea {
-	height: 150px;
+	height: 20px;
 }
 
 form p { clear: both; }
@@ -86,6 +86,12 @@ form p { clear: both; }
 	font-size: 0.9em;
 }
 
+.date-comment {
+	margin: 0px 0 0 0px;
+	font-style: italic;
+	font-size: 0.8em;
+}
+
 .titre-comments {
 	margin-top: 50px;
 }
@@ -93,6 +99,13 @@ form p { clear: both; }
 .contenu-article {
 	margin: 20px auto;
 	width: 80%;
+}
+
+.commentaire {
+	margin: 20px auto;
+	width: 80%;
+	font-size: 0.9em;
+
 }
 
 input[type="submit"] {

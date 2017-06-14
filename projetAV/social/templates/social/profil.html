@@ -5,22 +5,65 @@
 {% block content %}
 
 
+<div class="container">
 	<h1>Profil de {{user.pseudo}}</h1>
 
 
-	{% for statut in derniers_statuts %}
-		<h2 class="titre-article">{{ statut.titre }}</h2>
+	{% for result in result_list %}
+		
 
 
-		<p class="infos-article">Le {{ statut.date|date:'SHORT_DATETIME_FORMAT' }}, <strong>{{user.pseudo}}</strong>:</p>
+		<h2 class="titre-article">{{ result.titre }}</h2>
+
+		{% if result.destinataire %}
+		
+		<p class="infos-article"><i class="fa fa-user" aria-hidden="true"></i> <strong>{{result.auteur.pseudo}}-->{{result.destinataire.pseudo}}</strong></p>
+
+		{% else %}
+
+
+		<p class="infos-article"><i class="fa fa-user" aria-hidden="true"></i> <strong>{{result.auteur.pseudo}}</strong></p>
+
+		{% endif %}
+
+
+
+		<p class="infos-article">{{ result.date|date:'SHORT_DATETIME_FORMAT' }}</p>
 
 		<div class="contenu-article">
-			{{ statut.contenu|safe|truncatewords_html:30 }}
-		</div>
+			{{ result.contenu|safe|truncatewords_html:30 }}
+		
+		{% for comment in result.comment_set.all %}
 
+		<p class="commentaire">{{comment.auteur_comment}} : {{comment.text_comment}}
+		<br>
+		il y a {{comment.date|timesince}}
+		</p>
+		{% endfor %}
+
+
+
+	  	<form method="post" action="" class="pure-form">
+	    {% csrf_token %}
+
+	    <p class="infos-article"><label for="contenu_commentaire">Commentaire: </label>
+	    <textarea id="contenu_commentaire" rows=2 name="contenu_commentaire" value=""></textarea>
+	    <input class="pure-button pure-button-primary" type="submit" />
+	    </p>
+	    
+
+
+	  </form>
+	  
+	   </div>
+
+	   <div class="clear"></div>
+	  {% endfor %}
+
+	</div>
 
 		<hr />
-	{% endfor %}
+	
 
 
 
